@@ -16,11 +16,4 @@ public abstract class Arquivo
     }
 
     public abstract IEnumerable<ItemExtrato> ObterItensExtrato();
-
-    public void MoverArquivoParaSucesso()
-    {
-        var nomeArquivo = Path.GetFileName(_caminho);
-        var caminhoSucesso = Path.Combine(Path.GetDirectoryName(_caminho)!, "sucesso", nomeArquivo);
-        File.Move(_caminho, caminhoSucesso);
-    }
 }
