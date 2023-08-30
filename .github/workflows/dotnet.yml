@@ -22,7 +22,7 @@ jobs:
       run: dotnet build ./src/Thoth.Core/Thoth.Core.csproj -c Release -o out
 
     - name: Package
-      run: dotnet pack ./src/Thoth.Core/Thoth.Core.csproj --no-build -c Release -o out 
+      run: dotnet pack ./src/Thoth.Core/Thoth.Core.csproj -c Release -o out 
 
     - name: Push on Nuget
       run: dotnet nuget push ./out/*.nupkg --api-key ${{ secrets.API_KEY_NUGET }} --source "https://api.nuget.org/v3/index.json"
